@@ -4,6 +4,4 @@ This is a demo how to easily display [lunrjs](https://lunrjs.com/) index using j
 
 To use this just replace `search_index.json` file with your own lunrjs index. This demo expects documents to be composed of fields `title` and `text`
 
-Demo:
-
-![](./demo.mp4)
+[see demo video](./demo.mp4)
