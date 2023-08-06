@@ -72,8 +72,19 @@ function doSearch() {
 
 function initSearch() {
   var search_input = document.getElementById('search-query');
+  var typewatch = (function(){
+    var timer = 0;
+    return function(callback, ms){
+      clearTimeout (timer);
+      timer = setTimeout(callback, ms);
+    };
+  })();
   if (search_input) {
-    search_input.addEventListener("keyup", doSearch);
+    search_input.addEventListener("keyup", function(){
+      typewatch(function(){
+        doSearch();
+      }, 500)
+    });
   }
   var term = getSearchTermFromLocation();
   if (term) {
